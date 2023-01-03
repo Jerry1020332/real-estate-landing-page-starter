@@ -16,21 +16,21 @@ const Hero = () => {
       flexDirection: "column" ,
       alignItems: "center" ,
       textAlign: "center" ,
-    }
+    },
   }));
 
-  // const Title = styled(Typography)(({ theme }) => ({
-  //   fontSize: "64px" ,
-  //   color: "#000336" ,
-  //   fontWeight: "bold" ,
-  //   margin: theme.spacing(4,0,4,0) ,
-  //   [theme.breakpoints.down("sm")]: {
-  //     fontSize: "40px" ,
-  //   },
-  // }));
+  const Title = styled(Typography)(({ theme }) => ({
+    fontSize: "64px" ,
+    color: "#000336" ,
+    fontWeight: "bold" ,
+    margin: theme.spacing(4,0,4,0) ,
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "40px" ,
+    },
+  }));
 
   return ( 
-    <Box sx={{backgroundColor: "#F3F3F3" , minheight: "280vh"}}>
+    <Box sx={{backgroundColor: "#F3F3F3" , minHeight: "280vh"}}>
       <Container>
         <Navbar />
         <CustomBox>

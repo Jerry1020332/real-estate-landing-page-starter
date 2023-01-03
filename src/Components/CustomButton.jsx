@@ -1,5 +1,5 @@
 import { Button, styled } from "@mui/material";
-// import { width } from "@mui/system";
+import { width } from "@mui/system";
 import React from "react";
 
 const CustomButton = ({
@@ -29,11 +29,11 @@ const CustomButton = ({
     },
     [theme.breakpoints.down("md")]:{
       margin: (heroBtn || getStartedBtn) && theme.spacing(3),
-      width: (heroBtn || getStartedBtn) &&"90%"
+      width: (heroBtn || getStartedBtn) &&"90%" ,
     },
     [theme.breakpoints.down("sm")]:{
       marginTop: guideBtn && theme.spacing(0, "auto", 3, "auto"),
-      width: guideBtn &&"90%"
+      width: guideBtn &&"90%" ,
     },
   }));
 

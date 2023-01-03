@@ -2,8 +2,8 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
-// import FeaturedPlayListIcon from "@mui/icons-material/FeaturedPlayList";
-// import MiscellaneousServicesIcon from "@mui/icons-material/MiscellaneousServices";
+import FeaturedPlayListIcon from "@mui/icons-material/FeaturedPlayList";
+import MiscellaneousServicesIcon from "@mui/icons-material/MiscellaneousServices";
 import logoImg from "../media/logo.png";
 import { Container } from "@mui/system";
 import CustomButton from "./CustomButton";
@@ -12,7 +12,7 @@ import {
   List,
   ListItem,
   ListItemButton,
-  // ListItemIcon,
+  ListItemIcon,
   ListItemText,
   styled,
 } from "@mui/material";
@@ -24,11 +24,10 @@ export const Navbar = () => {
   });
 
   const toggleDrawer = (anchor, open) => (event) =>{
-    if(
-
+    if (
       event.type ==="keydown" &&
       (event.type === "Tab" || event.type === "Shift")
-    ){
+    ) {
       return;
     }
     setMobilemenu({ ...mobileMenu,[anchor]: open});
@@ -36,21 +35,21 @@ export const Navbar = () => {
 
   const list = (anchor) =>(
     <Box 
-      sx={{width: anchor === "Top" || anchor === "bottom" ? "auto" : 250 }}
+      sx={{width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
       role = "presentation"
       onClick = {toggleDrawer(anchor, false)}
       onKeyDown = {toggleDrawer(anchor, false)}
     >
       <List>
-        {["Explore", "About"].map(
+        {["Features", "Services"].map(
           (text, index) => (
             <ListItem key={text} disablePadding>
               <ListItemButton>
-                {/* <ListItemIcon>
+                <ListItemIcon>
                   {index === 0 && <FeaturedPlayListIcon />}
                   {index === 1 && <MiscellaneousServicesIcon />}
-                </ListItemIcon> */}
-                <ListItemText primary={text}/>
+                </ListItemIcon>
+                <ListItemText primary={text} />
               </ListItemButton>
             </ListItem>
           )
@@ -76,7 +75,7 @@ export const Navbar = () => {
     gap: theme.spacing(3),
     [theme.breakpoints.dom("md")]: {
       display: "none",
-    }
+    },
   }));
 
   const CustomMenuIcon = styled(MenuIcon)(({ theme }) => ({
@@ -128,8 +127,8 @@ export const Navbar = () => {
       </Box>
 
       <NavbarLinksBox>
-        <NavLink variant= "body2">Explore</NavLink>
-        <NavLink variant= "body2">About</NavLink>
+        <NavLink variant= "body2">Features</NavLink>
+        <NavLink variant= "body2">Services</NavLink>
       </NavbarLinksBox>
     </Box>
 
@@ -143,9 +142,9 @@ export const Navbar = () => {
     >
       <NavLink variant= "body2">註冊</NavLink>
       <CustomButton 
-      backgroundColor="#F5C520"
-      color="#000"
-      buttonText="登入"
+        backgroundColor="#F5C520"
+        color="#000"
+        buttonText='登入'
       />
     </Box>
   </NavbarContainer>
