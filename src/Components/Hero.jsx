@@ -3,7 +3,7 @@ import { Container } from "@mui/system";
 import React from "react";
 import Navbar from "./Navbar";
 
-import heroImg from "../media/hero_illustration.png";
+import Img from "../media/Group.svg";
 import CustomButton from "./CustomButton";
 
 const Hero = () => {
@@ -34,21 +34,23 @@ const Hero = () => {
       <Container>
         <Navbar />
         <CustomBox>
-          <Box sx={{flex: "1"}}>
+          <Box sx={{flex: "1"}} style={{
+                marginLeft: "50px",
+              }}>
             <Typography 
-              variant= "body2" 
+              variant= "h1" 
               sx={{
                 fontSize: "32px" ,
                 color: "1e1e1e" ,
                 fontWeight: "800",
-                mt:10,
+                mt:20,
                 mb:0,
               }}
             >
               做專案、組團隊、拓展人脈，
             </Typography>
             <Typography 
-              variant= "body2" 
+              variant= "h1" 
               sx={{
                 fontSize: "32px" ,
                 color: "1e1e1e" ,
@@ -60,7 +62,7 @@ const Hero = () => {
               都在這裡
             </Typography>
             <Typography 
-              variant= "body2" 
+              variant= "h3" 
               sx={{
                 fontSize: "16px" ,
                 color: "5A6473" ,
@@ -76,6 +78,16 @@ const Hero = () => {
               color= "#000" 
               buttonText= '馬上加入'
               heroBtn={true}
+            />
+          </Box>
+
+          <Box sx={{flex: "1"}}>
+              <img src={Img} alt="" 
+              style={{
+                maxWidth: "100%", 
+                marginBottom: "2rem", 
+                marginTop: "2rem"
+              }}
             />
           </Box>
         </CustomBox>

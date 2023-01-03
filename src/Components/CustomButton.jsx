@@ -16,15 +16,16 @@ const CustomButton = ({
     fontWeight: "700",
     fontSize: "14px",
     cursor: "pointer",
-    padding: "0.5rem 1.25rem",
+    padding: "0.25rem 3rem",
     borderRadius: "7px",
     textTransform: "none",
     display: "block",
     border: "2px solid transparent",
+    marginBottom: "65px",
     "&:hover": {
-      backgroundColor: color,
-      color: backgroundColor,
-      borderColor: backgroundColor
+      backgroundColor: "#fff",
+      color: "#000",
+      borderColor: "#000"
     },
     [theme.breakpoints.down("md")]:{
       margin: (heroBtn || getStartedBtn) && theme.spacing(3),
