@@ -19,15 +19,15 @@ const Hero = () => {
     }
   }));
 
-  const Title = styled(Typography)(({ theme }) => ({
-    fontSize: "64px" ,
-    color: "#000336" ,
-    fontWeight: "bold" ,
-    margin: theme.spacing(4,0,4,0) ,
-    [theme.breakpoints.down("sm")]: {
-      fontSize: "40px" ,
-    },
-  }));
+  // const Title = styled(Typography)(({ theme }) => ({
+  //   fontSize: "64px" ,
+  //   color: "#000336" ,
+  //   fontWeight: "bold" ,
+  //   margin: theme.spacing(4,0,4,0) ,
+  //   [theme.breakpoints.down("sm")]: {
+  //     fontSize: "40px" ,
+  //   },
+  // }));
 
   return ( 
     <Box sx={{backgroundColor: "#F3F3F3" , minheight: "280vh"}}>
@@ -81,13 +81,11 @@ const Hero = () => {
             />
           </Box>
 
-          <Box sx={{flex: "1"}}>
-              <img src={Img} alt="" 
-              style={{
-                maxWidth: "100%", 
-                marginBottom: "2rem", 
-                marginTop: "2rem"
-              }}
+          <Box sx={{flex: "1" }}>
+              <img 
+                src={Img} 
+                alt="pic" 
+                style={{ maxWidth: "100%", marginBottom: "2rem", marginTop: "2rem" }}
             />
           </Box>
         </CustomBox>

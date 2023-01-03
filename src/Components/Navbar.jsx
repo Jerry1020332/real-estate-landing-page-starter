@@ -2,11 +2,8 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
-import FeaturedPlayListIcon from "@mui/icons-material/FeaturedPlayList";
-import MiscellaneousServicesIcon from "@mui/icons-material/MiscellaneousServices";
-import ListAltIcon from "@mui/icons-material/ListAlt";
-import HomeIcon from "@mui/icons-material/Home";
-import ContactsIcon from "@mui/icons-material/Contacts";
+// import FeaturedPlayListIcon from "@mui/icons-material/FeaturedPlayList";
+// import MiscellaneousServicesIcon from "@mui/icons-material/MiscellaneousServices";
 import logoImg from "../media/logo.png";
 import { Container } from "@mui/system";
 import CustomButton from "./CustomButton";
@@ -15,13 +12,54 @@ import {
   List,
   ListItem,
   ListItemButton,
-  ListItemIcon,
+  // ListItemIcon,
   ListItemText,
   styled,
 } from "@mui/material";
 import { useState } from "react";
 
 export const Navbar = () => {
+  const [mobileMenu, setMobilemenu]= useState({
+    left: false,
+  });
+
+  const toggleDrawer = (anchor, open) => (event) =>{
+    if(
+
+      event.type ==="keydown" &&
+      (event.type === "Tab" || event.type === "Shift")
+    ){
+      return;
+    }
+    setMobilemenu({ ...mobileMenu,[anchor]: open});
+  };
+
+  const list = (anchor) =>(
+    <Box 
+      sx={{width: anchor === "Top" || anchor === "bottom" ? "auto" : 250 }}
+      role = "presentation"
+      onClick = {toggleDrawer(anchor, false)}
+      onKeyDown = {toggleDrawer(anchor, false)}
+    >
+      <List>
+        {["Explore", "About"].map(
+          (text, index) => (
+            <ListItem key={text} disablePadding>
+              <ListItemButton>
+                {/* <ListItemIcon>
+                  {index === 0 && <FeaturedPlayListIcon />}
+                  {index === 1 && <MiscellaneousServicesIcon />}
+                </ListItemIcon> */}
+                <ListItemText primary={text}/>
+              </ListItemButton>
+            </ListItem>
+          )
+        )}
+      </List>
+    </Box>
+  );
+
+
   const NavLink = styled(Typography)(({ theme }) => ({
     fontSize: "14px",
     color: "#fff",
@@ -78,7 +116,14 @@ export const Navbar = () => {
       }}
     >
       <Box sx={{display: "flex", alignItems: "center"}}>
-        <CustomMenuIcon />
+        <CustomMenuIcon onClick={toggleDrawer("left", true)}/>
+        <Drawer 
+          anchor="left" 
+          open= {mobileMenu["left"]} 
+          onClose= {toggleDrawer("left", false)}
+        >
+          {list("left")}
+        </Drawer>
         <NavbarLogo src={logoImg} alt="logo"/>
       </Box>
 
@@ -88,7 +133,14 @@ export const Navbar = () => {
       </NavbarLinksBox>
     </Box>
 
-    <Box sx={{display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem"}}>
+    <Box 
+      sx={{
+        display: "flex", 
+        alignItems: "center", 
+        justifyContent: "center", 
+        gap: "1rem"
+      }}
+    >
       <NavLink variant= "body2">註冊</NavLink>
       <CustomButton 
       backgroundColor="#F5C520"
