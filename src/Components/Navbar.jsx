@@ -81,6 +81,20 @@ export const Navbar = () => {
         <CustomMenuIcon />
         <NavbarLogo src={logoImg} alt="logo"/>
       </Box>
+
+      <NavbarLinksBox>
+        <NavLink variant= "body2">Explore</NavLink>
+        <NavLink variant= "body2">About</NavLink>
+      </NavbarLinksBox>
+    </Box>
+
+    <Box sx={{display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem"}}>
+      <NavLink variant= "body2">註冊</NavLink>
+      <CustomButton 
+      backgroundColor="#F5C520"
+      color="#000"
+      buttonText="登入"
+      />
     </Box>
   </NavbarContainer>
   );
