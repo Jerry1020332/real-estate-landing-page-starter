@@ -11,17 +11,17 @@ const CustomButton = ({
   getStartedBtn
 }) => {
   const CustomButton = styled(Button)(({ theme }) => ({
-    backgroundColor: backgroundColor,
-    color: color,
+    backgroundColor: "#F5C520",
+    color: "#1e1e1e",
     fontWeight: "700",
     fontSize: "14px",
     cursor: "pointer",
     padding: "0.25rem 3rem",
     borderRadius: "7px",
+    marginRight: "-150px",
     textTransform: "none",
     display: "block",
     border: "2px solid transparent",
-    marginBottom: "65px",
     "&:hover": {
       backgroundColor: "#fff",
       color: "#000",

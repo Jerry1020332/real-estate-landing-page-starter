@@ -30,21 +30,20 @@ const Hero = () => {
   }));
 
   return ( 
-    <Box sx={{backgroundColor: "#F3F3F3" , minHeight: "280vh"}}>
+    <Box sx={{backgroundColor: "#F3F3F3" , minHeight: "80vh"}}>
       <Container>
         <Navbar />
         <CustomBox>
           <Box sx={{flex: "1"}} style={{
                 marginLeft: "50px",
               }}>
-            <Typography 
-              variant= "h1" 
+            <Typography variant= "h1" 
               sx={{
                 fontSize: "32px" ,
                 color: "1e1e1e" ,
                 fontWeight: "800",
                 mt:20,
-                mb:0,
+                mb:3,
               }}
             >
               做專案、組團隊、拓展人脈，
