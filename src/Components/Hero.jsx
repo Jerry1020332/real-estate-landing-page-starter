@@ -30,19 +30,19 @@ const Hero = () => {
   }));
 
   return ( 
-    <Box sx={{backgroundColor: "#F3F3F3" , minHeight: "80vh"}}>
+    <Box sx={{backgroundColor: "#f3f3f3" , minHeight: "30vh" ,}}>
       <Container>
         <Navbar />
         <CustomBox>
           <Box sx={{flex: "1"}} style={{
-                marginLeft: "50px",
+                padding: "50px",
               }}>
             <Typography variant= "h1" 
               sx={{
                 fontSize: "32px" ,
                 color: "1e1e1e" ,
                 fontWeight: "800",
-                mt:20,
+                mt:10,
                 mb:3,
               }}
             >
@@ -88,6 +88,8 @@ const Hero = () => {
             />
           </Box>
         </CustomBox>
+        {/* <Box sx={{ml:"0px",marginTop: "-100px",backgroundColor: "#F0F1FA" , minWidth: "100%",minHeight: "200px"}}>
+          </Box> */}
       </Container>
     </Box>
   );

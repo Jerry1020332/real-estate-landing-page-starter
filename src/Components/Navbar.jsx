@@ -68,7 +68,7 @@ export const Navbar = () => {
   );
 
   const NavLink = styled(Typography)(({ theme }) => ({
-    fontSize: "14px",
+    fontSize: "20px",
     color: "#1e1e1e",
     fontWeight: "bold",
     cursor: "pointer",
@@ -109,6 +109,7 @@ export const Navbar = () => {
   const NavbarLogo = styled("img")(({ theme }) => ({
     cursor: "pointer",
     marginLeft: "-150px",
+    // marginTop: "-100px",
     [theme.breakpoints.down("md")]: {
       display: "none",
     },
@@ -118,6 +119,7 @@ export const Navbar = () => {
     cursor: "pointer",
     marginLeft: "30px",
     marginRight: "10px",
+    // marginTop: "-100px",
     [theme.breakpoints.down("md")]: {
       display: "none",
     },
@@ -170,8 +172,8 @@ export const Navbar = () => {
           buttonText="註冊"
         />
         <CustomButton
-          backgroundColor="#0F1B4C"
-          color="#fff"
+          // backgroundColor="#0F1B4C"
+          // color="#fff"
           buttonText="登入"
         />
       </Box>
